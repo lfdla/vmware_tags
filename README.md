@@ -71,10 +71,11 @@ I've made some change in the plugin itself to better suit my needs:
  
 Let's list the inventory content:
  
-
+```
+[ronan@ansible]$ ansible-inventory --list -i lab.vmware.yml
+```
 
 ```json
-[ronan@ansible]$ ansible-inventory --list -i lab.vmware.yml
 {
     "_meta": {
         "hostvars": {
@@ -123,7 +124,7 @@ Let's list the inventory content:
                 "name": "satellite-client-03", 
                 "runtime.maxMemoryUsage": 2048
             }, 
-[...]
+...
         }
     }, 
     "blue": {
@@ -145,7 +146,7 @@ Let's list the inventory content:
             "satellite-client-03"
         ]
     }
-[...]
+...
 }
 ```
  
@@ -169,8 +170,11 @@ Just copy the script in the current directory and make it executable. Then setup
 
 Thoses variables makes the script compatible with AWX / Ansible Tower. More on that in a future post.
 
-```json
-[ronan@ansible]$ ansible-inventory --list -i vmware_tags.py 
+```
+[ronan@ansible]$ ansible-inventory --list -i vmware_tags.py
+```
+
+```json 
 {
     "_meta": {
         "hostvars": {
@@ -204,7 +208,7 @@ Thoses variables makes the script compatible with AWX / Ansible Tower. More on t
                 "vm_id": "vm-508698", 
                 "vm_uuid": "500ce1d5-de4a-e1db-0c06-3d190e7f5f88"
             },
-[...]
+...
         }
     }, 
     "blue": {
@@ -226,6 +230,6 @@ Thoses variables makes the script compatible with AWX / Ansible Tower. More on t
             "satellite-client-03"
         ]
     }
-[...]
+...
 }
 ```
